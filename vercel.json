@@ -1,13 +1,19 @@
 {
-    "builds": [{
-        "src" : "crashdjango/wsgi.py",
-        "use" : "@vercel/python",
-        "config" : { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
-    "routes" : [
+    "builds": [
         {
-            "src" :"/(.*)",
-            "dest" : "crashdjango/wsgi.py"
+            "src": "crashdjango/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/crashdjango/wsgi.py"
         }
     ]
+}
 }
